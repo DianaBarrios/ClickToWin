@@ -1,0 +1,89 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+footer {
+    padding: 5px;
+}
+
+h1, h4 {
+    display: inline-block;
+    background-color: lightpink;
+}
+
+#game{
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+    height: 50vh;
+    width: 80vw;
+}
+
+#table {
+    align-self: center;
+    height: 90%;
+    width: 90%;
+}
+
+#start-btn {
+    font-size: 20px;
+    height: 60px;
+    width: 110px;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 20px;
+}
+
+#restart-btn {
+    height: 60px;
+    width: 110px;
+    font-size: 20px;
+    display: none;
+    border-radius: 5px;
+}
+
+#start-btn:hover, #restart-btn:hover {
+    background-color: greenyellow;
+}
+
+.icon{
+    background-size: contain;
+    text-align: center;
+    font-size: 50px;
+    display: inline-block;
+    position: absolute;
+    border-radius: 8px;
+}
+
+#icon-0 {
+    background-image: url(./assets/logo-emissary-fondo.png);
+}
+
+#icon-1 {
+    background-image: url(./assets/logo-carssa.png);
+}
+
+#icon-2 {
+    background-image: url(./assets/logo-dhl.png);
+}
+
+#icon-3 {
+    background-image: url(./assets/logo-estafeta.png);
+}
+
+#icon-4 {
+    background-image: url(./assets/logo-fedex.png);
+}
+
+#icon-5 {
+    background-image: url(./assets/logo-quiken.png);
+}
+
+#icon-6 {
+    background-image: url(./assets/logo-redpack.png);
+}
+
+#icon-7 {
+    background-image: url(./assets/logo-sendex.png);
+}
