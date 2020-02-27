@@ -58,7 +58,8 @@ function checkOverlap(j,x,y){
         let left = icons[i].getBoundingClientRect.left;
         let top = icons[i].getBoundingClientRect.top;
         let side = icons[i].offsetWidth;
-        if((x >= left && x <= (left+side)) && ((y >= top && y <= (top+side))||((y+side) >= top)) || ((y >= top && y <= (top+side)) && ((x >= left && x <= (left+side)) || (x+side >= left))) || ((x >= left && x <= (left+side)) && (y >= top && y <= (top+side))) || ((x+side) >= left && (x <= left) && (y >= top) && (y <= (top+side)))){
+        if((x >= left && x <= (left+side)) && ((y >= top && y <= (top+side))||((y+side) >= top)) || ((y >= top && y <= (top+side)) && ((x >= left && x <= (left+side)) || (x+side >= left))) || ((x >= left && x <= (left+side)) && (y >= top && y <= (top+side))) || ((x+side) >= left && (x <= left) && (y >= top) && (y <= (top+side))) || ((x+side) >= left && (y
+            +side) >= top) || (((x >= left) && (x <= left+side)) && (((y+side) >= top) && (y <= top)))){
             return true;
         }
     }
