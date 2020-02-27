@@ -52,14 +52,28 @@ function restartGame(){
     document.getElementById("time-count").innerHTML = " ";
 }
 
+function checkPointInside(left,top,x,y,side){
+    if(x >= left && y >= top){
+        if(x <= (left+side) && y <= (top+side)){
+            console.log("point inside: true");
+            return true;
+        }
+    }
+    console.log("point inside: false");
+    return false;
+}
+
 function checkOverlap(j,x,y){
     let icons = document.getElementsByClassName("icon");
     for(let i = 0; i < j; i++){
-        let left = icons[i].getBoundingClientRect.left;
-        let top = icons[i].getBoundingClientRect.top;
+        console.log("checking: " + j + " vs " + i);
+        let left = icons[i].getBoundingClientRect().left;
+        let top = icons[i].getBoundingClientRect().top;
         let side = icons[i].offsetWidth;
-        if((x >= left && x <= (left+side)) && ((y >= top && y <= (top+side))||((y+side) >= top)) || ((y >= top && y <= (top+side)) && ((x >= left && x <= (left+side)) || (x+side >= left))) || ((x >= left && x <= (left+side)) && (y >= top && y <= (top+side))) || ((x+side) >= left && (x <= left) && (y >= top) && (y <= (top+side))) || ((x+side) >= left && (y
-            +side) >= top) || (((x >= left) && (x <= left+side)) && (((y+side) >= top) && (y <= top)))){
+        if(checkPointInside(left,top,x,y,side) ||
+        checkPointInside(left,top,x,y+side,side) ||
+        checkPointInside(left,top,x+side,y,side) ||
+        checkPointInside(left,top,x+side,y+side,side)) {
             return true;
         }
     }
@@ -72,8 +86,8 @@ function randomPos() {
     let maxX = table.offsetWidth + minX;
     let minY = table.getBoundingClientRect().top;
     let maxY = table.offsetHeight + minY;
-    var randPosX = Math.floor(Math.random() * (maxX-minX)) + minX;
-    var randPosY = Math.floor(Math.random() * (maxY-minY)) + minY;
+    var randPosX = Math.floor(Math.floor(Math.random() * (maxX-minX)) + minX);
+    var randPosY = Math.floor(Math.floor(Math.random() * (maxY-minY)) + minY);
     return [randPosX, randPosY];
 }
 
